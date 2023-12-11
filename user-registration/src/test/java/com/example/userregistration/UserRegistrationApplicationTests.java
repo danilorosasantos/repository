@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.Locale;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -62,6 +63,22 @@ public class UserRegistrationApplicationTests {
 		assertEquals(expectedResponse, result.getResponse().getContentAsString());
 	}
 
+	@Test
+	void registerUserNotEligible() throws Exception {
+		when(geoLocalisationService.getGeoLocalisation(any(String.class), any(), any(), any()))
+		.thenReturn(new GeoLocalisation("New York", "USA"));
+
+		MvcResult result = mvc
+				.perform(
+						MockMvcRequestBuilders.post("/user-registration/register").contentType("application/json")
+								.content("{\"username\":\"".concat(user.getUsername()).concat("\",\"password\":\"")
+										.concat(user.getPassword()).concat("\",\"ipAddress\":\"").concat(user.getIpAddress()).concat("\"}")))
+				.andReturn();
+		String expectedResponse = messageSource.getMessage("register_user.not_eligible", null,
+				Locale.CANADA);
+		Assertions.assertTrue(result.getResponse().getContentAsString().contains(expectedResponse));
+	}
+	
 	@Test
 	void registerUserReturnsInvalidPassword() throws Exception {
 		user.setPassword("ss1ssA*sssss");

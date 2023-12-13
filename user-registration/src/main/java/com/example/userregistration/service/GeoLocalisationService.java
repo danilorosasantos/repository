@@ -1,4 +1,4 @@
-package com.example.userregistration.services;
+package com.example.userregistration.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.userregistration.beans.GeoLocalisation;
+import com.example.userregistration.model.GeoLocalisation;
 
 @Service("geoLocalisationService")
 public class GeoLocalisationService implements IGeoLocalisationService {

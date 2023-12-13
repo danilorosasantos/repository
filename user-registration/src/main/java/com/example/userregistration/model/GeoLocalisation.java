@@ -1,4 +1,4 @@
-package com.example.userregistration.beans;
+package com.example.userregistration.model;
 
 public class GeoLocalisation {
 	public String query;

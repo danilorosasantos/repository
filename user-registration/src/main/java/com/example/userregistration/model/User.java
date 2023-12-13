@@ -1,4 +1,4 @@
-package com.example.userregistration.beans;
+package com.example.userregistration.model;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

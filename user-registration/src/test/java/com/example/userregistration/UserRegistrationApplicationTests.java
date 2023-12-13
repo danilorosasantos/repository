@@ -19,10 +19,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import com.example.userregistration.beans.GeoLocalisation;
-import com.example.userregistration.beans.User;
-import com.example.userregistration.controllers.UserRegistrationController;
-import com.example.userregistration.services.GeoLocalisationService;
+import com.example.userregistration.controller.UserRegistrationController;
+import com.example.userregistration.model.GeoLocalisation;
+import com.example.userregistration.model.User;
+import com.example.userregistration.service.GeoLocalisationService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserRegistrationController.class)

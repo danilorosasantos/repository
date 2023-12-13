@@ -1,4 +1,4 @@
-package com.example.userregistration.controllers;
+package com.example.userregistration.controller;
 
 import java.util.UUID;
 
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.userregistration.beans.GeoLocalisation;
-import com.example.userregistration.beans.User;
-import com.example.userregistration.exceptions.ExternalIPException;
-import com.example.userregistration.services.GeoLocalisationService;
+import com.example.userregistration.exception.ExternalIPException;
+import com.example.userregistration.model.GeoLocalisation;
+import com.example.userregistration.model.User;
+import com.example.userregistration.service.GeoLocalisationService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;

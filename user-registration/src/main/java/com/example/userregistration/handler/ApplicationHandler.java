@@ -1,4 +1,4 @@
-package com.example.userregistration.validation;
+package com.example.userregistration.handler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.example.userregistration.exceptions.ExternalIPException;
+import com.example.userregistration.exception.ExternalIPException;
 
 @RestControllerAdvice
 public class ApplicationHandler {
